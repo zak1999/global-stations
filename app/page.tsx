@@ -1,5 +1,6 @@
 import StationCard from "./components/StationCard";
 import { collectAllStationData } from "./api";
+import MainContainer from "./components/MainContainer";
 
 export type Station = {
   id: string;
@@ -13,10 +14,9 @@ export type Station = {
 export default async function Home() {
   // This runs server-side (https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating)
   const allStations = (await collectAllStationData()) as Station[];
-  console.log(allStations);
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-12 md:p-24 max-w-5xl m-auto">
+    <MainContainer>
       <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight ">
         Global's Stations
       </h1>
@@ -27,6 +27,6 @@ export default async function Home() {
           </li>
         ))}
       </ul>
-    </main>
+    </MainContainer>
   );
 }
