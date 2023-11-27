@@ -36,5 +36,5 @@ export default async function Home() {
 }
 
 const StationCard: FC<{ station: Station }> = ({ station }) => {
-return <a>{station.name}</a>;
+return <a href={`/${station.slug}`}>{station.name}</a>;
 }
