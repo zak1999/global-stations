@@ -51,7 +51,7 @@ const StationCard: FC<{ station: Station }> = ({ station }) => {
             </div>
           ) : (
             <div className=" bg-slate-100 w-full justify-self-end py-6 text-sm font-mono">
-              <p className="capitalize">- "{extraData?.tagline}"</p>
+              <p className="capitalize">- &#34;{extraData?.tagline}&#34;</p>
               <p className="">
                 - Listen{" "}
                 <a className="underline" href={`/${station.slug}`}>

@@ -6,7 +6,6 @@ import { Station } from "../page";
 const Page = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
   const station = (await getStationData(slug)) as Station;
-  console.log(station);
 
   return (
     <MainContainer>
