@@ -31,28 +31,26 @@ const StationCard: FC<{ station: Station }> = ({ station }) => {
 
       {/* Station Info */}
       <div className="flex flex-col w-full items-center sm:items-start">
-        <div className="flex justify-between bg-white w-full p-2 rounded-t-lg">
+        {/* 'Extra' Btn */}
+        <button
+          onClick={() => {
+            collectMoreInfo();
+            setIsDropdownOpen(!isDropdownOpen);
+          }}
+          className=" hover:bg-slate-200 text-gray-600 px-5 text-lg font-bold flex justify-between bg-white w-full p-2 rounded-t-lg border-b-2"
+        >
           <h2 className="text-xl font-semibold ">{station.name}</h2>
-          {/* 'Extra' Btn */}
-          <button
-            onClick={() => {
-              collectMoreInfo();
-              setIsDropdownOpen(!isDropdownOpen);
-            }}
-            className=" hover:bg-slate-200 text-gray-600 px-5 text-lg font-bold"
-          >
-            {isDropdownOpen ? "-" : "+"}{" "}
-          </button>
-        </div>
+          {isDropdownOpen ? "-" : "+"}{" "}
+        </button>
 
         {/* Extra Info Tab */}
         {isDropdownOpen &&
           (loading ? (
-            <div className="flex bg-red-50 w-full items-center justify-center">
+            <div className="flex w-full items-center justify-center">
               <Loader />
             </div>
           ) : (
-            <div className=" bg-slate-100 w-full justify-self-end py-6 text-sm font-mono border-t-2">
+            <div className=" bg-slate-100 w-full justify-self-end py-6 text-sm font-mono">
               <p className="capitalize">- "{extraData?.tagline}"</p>
               <p className="">
                 - Listen{" "}
@@ -67,7 +65,6 @@ const StationCard: FC<{ station: Station }> = ({ station }) => {
   );
 };
 export default StationCard;
-
 
 // this is from here: https://reactsvgicons.com/
 // I added tailwind animate and changed the height/width
