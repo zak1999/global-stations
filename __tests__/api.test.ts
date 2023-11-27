@@ -12,7 +12,7 @@ describe('getStationData', () => {
       "slug": "classicfm",
       "tagline": "The World's Greatest Music",
       "streamUrl": "https://media-ssl.musicradio.com/ClassicFM"
-  };
+    };
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
       json: jest.fn().mockResolvedValue(mockResponse),
@@ -38,10 +38,10 @@ describe('collectAllStationData', () => {
   it('fetches all station data successfully', async () => {
     const mockResponse = [
       {
-          "id": "KLo",
-          "logo": "https://herald.musicradio.com/media/0d3d891d-32f2-4c53-95ee-8d1e35bdd126.png",
-          "name": "Capital UK",
-          "slug": "capital"
+        "id": "KLo",
+        "logo": "https://herald.musicradio.com/media/0d3d891d-32f2-4c53-95ee-8d1e35bdd126.png",
+        "name": "Capital UK",
+        "slug": "capital"
       }];
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,

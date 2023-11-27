@@ -18,7 +18,7 @@ export default async function Home() {
   return (
     <MainContainer>
       <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight ">
-        Global's Stations
+        Global&apos;s Stations
       </h1>
       <ul className="w-full gap-4 flex flex-col">
         {allStations.map((stat, index) => (
