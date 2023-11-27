@@ -1,4 +1,4 @@
-const BASE_URL = "https://75750e17-4c6f-43f1-9a65-e4290c99700a.mock.pstmn.io";
+export const BASE_URL = "https://75750e17-4c6f-43f1-9a65-e4290c99700a.mock.pstmn.io";
 export const getStationData = async (slug: string) => {
   const res = await fetch(`${BASE_URL}/station/${slug}`);
   if (!res.ok) {
